@@ -13,7 +13,4 @@ app.use(bodyParser.urlencoded({
 app.use(express.json());
 app.use('/',todo)
 
-app.get('/', (req, res)=>{
-  res.status(200).send("hello man");
-})
 module.exports = app;
