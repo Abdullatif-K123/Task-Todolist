@@ -8,20 +8,12 @@ router
   .post("/api/:id", async (req, res) => {
     const id = req.params.id;
     const todoTask = new TodoTask({ userId: id, content: req.body.content });
-    if(todoTask.length==0)
-    {
-      res.status(200).json("there are no tasks yet");
-    }
-    else
-    {
       try {
         await todoTask.save();
         res.status(200).json("storring is done..");
       } catch (err) {
         res.status(500).json("some thing wrong with db");
       }
-
-    }
     
    
   })
