@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { deleteOne } = require("../models/TodoTask");
 //Models
 const TodoTask = require("../models/TodoTask");
 
