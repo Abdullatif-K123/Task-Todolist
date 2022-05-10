@@ -25,7 +25,14 @@ router
     
    
   })
-  
+  //Get Method for all todo specific user!!!
+  .get("/api/:id", (req, res) => {
+    const id = req.params.id;
+    TodoTask.find({ userId: id }, (err, tasks) => {
+      if (!err) res.status(200).json(tasks);
+      else res.status(500).json(err);
+    });
+  })
   //Get Method information todo
   .get("/api/:id/:todoId", (req, res) => {
     const id = req.params.id;
